@@ -119,7 +119,7 @@ export default function Dashboard() {
                             <textarea value={body} style={{ width: "500px", height: "150px", allignItems: "center", marginLeft: "10px", marginTop: "10px" }} onChange={e => setBody(e.target.value)}>Type Your Story Here</textarea>
                         </div>
                         <div className="dash-flex">
-                            <div className="dash-radio-buttons">
+                            <div className="dash-radio-buttons" value={category} onChange={e => setCategory(e.target.value)}>
                                 <FormControl component="fieldset">
                                     {/* <FormLabel component="legend">Gender</FormLabel> */}
                                     <RadioGroup
@@ -127,11 +127,11 @@ export default function Dashboard() {
                                         defaultValue="female"
                                         name="radio-buttons-group"
                                     >
-                                        <FormControlLabel value={category} onChange={e => setCategory(e.target.value)} control={<Radio />} label="Politics" />
-                                        <FormControlLabel value={category} onChange={e => setCategory(e.target.value)} control={<Radio />} label="Sports" />
-                                        <FormControlLabel value={category} onChange={e => setCategory(e.target.value)} control={<Radio />} label="Business" />
-                                        <FormControlLabel value={category} onChange={e => setCategory(e.target.value)} control={<Radio />} label="Science & Tech" />
-                                        <FormControlLabel value={category} onChange={e => setCategory(e.target.value)} control={<Radio />} label="Entertainment" />
+                                        <FormControlLabel  value="politics" control={<Radio />} label="Politics" />
+                                        <FormControlLabel value="sports"  control={<Radio />} label="Sports" />
+                                        <FormControlLabel value="business"control={<Radio />} label="Business" />
+                                        <FormControlLabel value="science & tech" control={<Radio />} label="Science & Tech" />
+                                        <FormControlLabel value="entertainment" control={<Radio />} label="Entertainment" />
                                     </RadioGroup>
                                 </FormControl>
                             </div>

@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React  from 'react';
 import './App.css';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as  Switch, Route } from 'react-router-dom';
 import "bootstrap/dist/css/bootstrap.css";
 // import "react-bootstrap-carousel/
 import Home from './Pages/Home'
@@ -10,9 +10,8 @@ import Entertainment from './Pages/Entertainment';
 import Science from './Pages/Science';
 import Business from './Pages/Business';
 import Politics from './Pages/Politics'
+// import Dashboard from './Pages/Dashboard'
 import Dashboard from './Pages/Dashboard'
-import Pages from './Pages/Pages';
-import Dash from './Pages/Dash'
 
 
 
@@ -30,8 +29,8 @@ function App() {
           <Route exact path='/dashboard'>
           <Dashboard />
         </Route>
-        <Route exact path='/dash'>
-          <Dash />
+        <Route exact path='/dashboard'>
+          <Dashboard />
         </Route>
         <Route exact path='/politics'>
           <Politics />
@@ -51,9 +50,7 @@ function App() {
         <Route exact path='/entertainment'>
         <Entertainment />
         </Route>
-        <Route exact path='/pages'>
-        <Pages />
-        </Route>
+        
       </Switch>
 
           

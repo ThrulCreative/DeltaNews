@@ -14,7 +14,7 @@ export default function News({news}) {
                     <p style={{fontSize: "30px",  fontWeight: "600", marginLeft: "2px", marginTop: "15px", color: "white", borderRadius: "5px", padding: "10px"}}>{news.title}</p> 
                 </div>
                 <div style={{width: "1200px", height: "500px", borderRadius: "4px"}}>
-                    <img src={news.imageUrl}/> 
+                    <img src={news.imageUrl} alt=""/> 
               </div>
                <div>
                <h5 style={{marginLeft: "50px", fontWeight: "600"}}>{news.tags}</h5>

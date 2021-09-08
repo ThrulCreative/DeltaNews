@@ -1,7 +1,7 @@
 import React from 'react'
 import Logo3 from '../NewsApp Props/Logo3.png'
 import { useState } from 'react'
-import { useHistory } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import axios from 'axios'
 
 
@@ -31,7 +31,7 @@ export default function SignIn() {
         History.push("/dashboard")
       })
       .catch(err => {
-        // alert('Enter Correct Login Details')
+        alert('Enter Correct Login Details')
         console.log(err)
       });
 
@@ -39,7 +39,7 @@ export default function SignIn() {
   return (
     <div className="admin-container">
       <div className="singin-logo">
-        <img src={Logo3} alt="" />
+       <Link to='./'> <img src={Logo3} alt="" /></Link>
       </div>
       <section className='signin-main'>
 

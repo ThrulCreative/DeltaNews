@@ -1,15 +1,29 @@
  import React from 'react'
+ import { useEffect, useState } from 'react'
+ import axios from 'axios';
  import Header from '../Components/Header'
  import { Link } from 'react-router-dom';
  import Deploy from '../NewsApp Props/Deploy.png'
- import Proud1 from '../NewsApp Props/Proud1.jpg'
- import Proud2 from '../NewsApp Props/Proud2.jpg'
+//  import Proud1 from '../NewsApp Props/Proud1.jpg'
+//  import Proud2 from '../NewsApp Props/Proud2.jpg'
+ import News from '../Components/News'
 import Footer from '../Components/Footer';
 
 
  
  export default function Politics() {
          const d = new Date();
+         const [ politics, setPolitics ] = useState([]);
+
+  useEffect(() => {
+        axios.get('https://backend-news-app-api.herokuapp.com/api/stories/category/politics')
+        .then((res)  => {
+            console.log(res.data.data)
+            setPolitics(res.data.data)
+        }).catch((err) => {
+            console.log(err)
+        })
+  }, [])
 
      return (
          <main>
@@ -26,11 +40,17 @@ import Footer from '../Components/Footer';
                         <img  style={{ marginTop: "10px",width: "auto", height:"40px"}}  src={process.env.PUBLIC_URL  + '/Search.png'}  alt="..."/>
                         {/* <i style={{ marginTop: "-15px"}} class="fas fa-search"></i> */}
                     </div>
+                    <div className="spacing">
                 <div className="politics-header">
                     <p>We'll deploy more resources to other sectors in 2022 -Okowa</p>
                 </div>
+                </div>
+                
                 <div>
-                   <img src={Deploy} alt=""/> 
+                <div className="spacing">
+                   <img src={Deploy} style={{width: "80%vw"}} alt=""/> 
+                 </div>
+                 <div className="spacing">
                 <bold><blockquote className="paragraph-one"> Jonah Ejike 1h ago</blockquote></bold>
                   <p className="paragraph-two"> Delta Governor, Sen. (Dr) Ifeanyi Okowa, on Friday, said every sector of the state economy would receive attention within the limit of available resources in 2022.<br/> <br/>
 
@@ -60,63 +80,20 @@ Unfortunately, he was only able to commission one of them before he left office 
 “So, our congratulations and thanks goes to Dr. Uduaghan for these projects that he started and just as we promised from the beginning, every good projects started by our predecessors both former Governors Uduaghan and James Ibori, we shall continue to strive to bring them to completion for the good and for the use of our people.<br/> <br/>
 
 “Because of the facilities in the school, we are going to rename the school to Ogini Model College. I want to reassure you that we will continue to ensure that the facilities in this school are maintained.</p> 
+                    </div>
                 </div>
-                <div className="politics-header">
-                 <p> Related Topics</p>
-                </div>
-                <div className="images-small">
-                    <img src={Proud1} class="d-block w-100" alt=""/>
-                </div>
-                <div className="politics-header">
-                    <p>Okowa wants Proper Monitoring of Nigeria's Crude Oil</p>
-                </div>
-                <div>
-                    <img style={{marginRight: "40px", width: "90%"}} src={Proud2} alt=""/>
-                </div>
-                <div className="politics-header">
-                    <p>Gov.Okowa Congratulates Omo-Agege at 58</p>
-                </div>
-                <div className="politics-header">
-                    <p>Comment</p>
-                </div>
-                <div>
-                    <textarea className="comment-div"></textarea> 
-                </div>
+               
 
-            <section className="comment-section">
-                <div>
-                <img  src={process.env.PUBLIC_URL  + '/Group 533.png'} class="d-block w-100" alt="..."/>
-                </div>
-                <div>
-                    <button className="comment-btn"> Post Comment</button>
-                </div>
-            </section>
-            <section className="comment-section">
-                {/* <div>
-                <img className="comment-section-one" src={process.env.PUBLIC_URL  + '/Group 533.png'} class="d-block w-100" alt="..."/>
-                </div> */}
-                {/* <div className="comment-texts"> */}
-        
-            </section>
-            <section className="comment-section">
-                <div>
-                <img  src={process.env.PUBLIC_URL  + '/Group 533.png'} class="d-block w-100" alt="..."/>
-                </div>
-                <div>
-                <h5> Jeremiah Itom  .︁ 2 hours ago</h5>
-                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pharetra magnis enim ac interdum leo tellus. Diam feugiat rhoncus, placerat suspendisse <br/> faucibus. Nulla scelerisque convallis ut lectus vitae tempus ultrices libero. Dot amet espiliere dotre tellius lorem ipsum sit amet dols lorders vitae.</p>
-                </div>
-            </section>
-            <section className="comment-section">
-                <div>
-                <img  src={process.env.PUBLIC_URL  + '/Group 533.png'} class="d-block w-100" alt="..."/>
-                </div>
-                <div>
-                <h5> Prudence Eki .︁ 2 hours ago</h5>
-                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pharetra magnis enim ac interdum leo tellus. Diam feugiat rhoncus, placerat suspendisse <br/> faucibus. Nulla scelerisque convallis ut lectus vitae tempus ultrices libero. Dot amet espiliere dotre tellius lorem ipsum sit amet dols lorders vitae.</p>
-                </div>
-            </section>
+                {
+                 politics.map((news) => (
 
+                     <News  key={news.id} news={news} />
+
+                 )) 
+             }
+
+           
+            
                 <Footer />
               </main>
      )

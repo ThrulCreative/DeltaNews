@@ -4,6 +4,8 @@
  
  body{
    background-color: #F5EFEF !important;
+   
+
 
  }
 
@@ -14,13 +16,14 @@
   background:#E51324;
   color:white;
   place-items: center;
+  width: 100vw;
 }
 .nav-items > img{
   margin: 0 100px 0 0 ;
 }
 .spacing {
-  padding-left: 12rem;
-  padding-right: 12rem;
+  padding-left: 5rem;
+  padding-right: 7rem;
 }
 
 .nav-buttons{
@@ -83,6 +86,15 @@
   width: 1400px;
   height: 1000px;
 }
+.home-links{
+  color: #E51324;
+  font-size: 30px;
+  font-weight: 800;
+}
+.home-paragraph a{
+  text-decoration: none !important;
+}
+
 .signin-container{
   display: grid;
   justify-items: center;
@@ -135,10 +147,10 @@
 
 .nav-signin {
   color: #E51324;
-  font-size: 15px;
+  font-size: 12px;
   text-decoration: none;
   margin-left: 6%;
-  margin-top: -10px;
+  margin-top: -12px;
 }
 .play{
   width: 120px;
@@ -182,21 +194,27 @@ h1 {
   margin-left: 50px;
   margin-right: 40px;
   font-weight: 800;
+  padding-left: 5rem;
+  padding-right: 7rem;
 }
 .politics-header p{
   align-items: center;
-  margin-left: 20px;
+  margin-left: 50px;
+  
 }
 .politics-header, img {
   margin-left: 50px;
   margin-right: 40px;
   font-size: 18px;
+  
 }
 .comment-div {
   height: 200px;
-  width: 1200px;
+  width: 1000px;
   margin-left: 50px;
   margin-right: 40px;
+  padding-left: 5rem;
+  padding-right: 7rem;
 }
 .paragraph-one {
   margin-left: 50px;
@@ -247,14 +265,14 @@ h1 {
  font-size: 15px;
  text-align: left;
  font-weight: 100;
- margin-left: -150px;
+ margin-left: -100px;
 
 }
 .carousel-h{
  font-size: 50px;
  text-align: left;
  font-weight: 800;
- margin-left: -150px;
+ margin-left: -100px;
  
 }
 .carousel-caption {
@@ -269,6 +287,9 @@ h1 {
   padding: 5px 10px;
   width: 100%;
 }
+.carousel-item {
+ width: 100%vw;
+}
 .img-paragraph-sports {
   margin-left: 50px;
   margin-top: -70px;
@@ -278,8 +299,11 @@ h1 {
   background: #0D334D !important;
   position: absolute !important;
   z-index: 4 !important; 
-  padding: 5px 10px;
-  width: 100%;
+  padding: 5px 0px;
+  width: 80%;
+  height: 50px;
+  padding-left: 5rem;
+
 }
 
 .medal--image {
@@ -296,7 +320,7 @@ h1 {
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
-  width: 100vw;
+  width: 80vw;
   margin-bottom: 20px;
   
 }
@@ -316,7 +340,7 @@ h1 {
   font-size: 12px;
 }
 .card-body {
-   margin-left: 35px;
+   margin-left: 40px;
    font-size: 12px;
 }
 .card-title {
@@ -344,7 +368,12 @@ h1 {
   color: white;
   margin-top: 50px;
   margin-bottom: 60px;
+  margin-left: 50px;
   height: 350px;
+  width: 95%;
+  padding-left: 5rem;
+  padding-right: 5rem;
+
 }
 
 
@@ -575,9 +604,8 @@ h1 {
 .input-btn {
   padding-right: 100px;
   background-color: white;
-  border: 1px solid black;
+  border: none;
   margin-left: 80px;
-
 
 
 }
@@ -613,4 +641,42 @@ h1 {
 }
 .dash-body{
   display: grid;
+}
+
+
+/*MEDIA QUERY RESPONSIVENESS
+
+*/
+
+@media screen and (max-width:450px) {
+  body {
+    /* background: blue; */
+    width: 100%;
+  }
+  .nav-items{
+    background: blue;
+    padding: 0%;
+  margin: 0%;
+  width: 100%;  
+  }
+  .logo {
+    width: 50px;
+    margin: 0%;
+  }
+  .nav-items > .play{
+    margin: 0%;
+    width: 60px;
+  }
+  .nav-items > img{
+    width: 80px;
+    margin: 0%;
+}
+.nav-buttons{
+  font-size: 10px;
+}
+.label{
+  height: 25%;
+  gap: 1%;
+  font-size: 12px;
+}
 }

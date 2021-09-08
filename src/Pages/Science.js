@@ -23,7 +23,7 @@ export default function Science() {
         <main>
          <Header />
          <div className="label">
-                    <img  style={{width: "20px"}} src={process.env.PUBLIC_URL  + '/Calender.png'}  alt="..."/>
+                    <img  style={{width: "25px"}} src={process.env.PUBLIC_URL  + '/Calender.png'}  alt="..."/>
                     <p>{d.toLocaleTimeString()}</p>
                     <p>{d.toDateString()}</p>
                     <p className="breaking-news">Breaking News</p>
@@ -41,14 +41,17 @@ export default function Science() {
 
                  )) 
              }
-
+            <div className="spacing">
               <div className="politics-header">
                     <p>Comment</p>
                 </div>
+                </div>
+                <div className="spacing">
                 <div>
                     <textarea className="comment-div"></textarea> 
                 </div>
-
+                </div>
+             <div className="spacing">
             <section className="comment-section">
                 <div>
                 <img  src={process.env.PUBLIC_URL  + '/Group 533.png'} class="d-block w-100" alt="..."/>
@@ -66,6 +69,7 @@ export default function Science() {
                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pharetra magnis enim ac interdum leo tellus. Diam feugiat rhoncus, placerat suspendisse <br/> faucibus. Nulla scelerisque convallis ut lectus vitae tempus ultrices libero. Dot amet espiliere dotre tellius lorem ipsum sit amet dols lorders vitae.</p>
                 </div>
                 </section>
+                </div>
                 
              <Footer />
         </main>

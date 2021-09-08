@@ -1,8 +1,11 @@
 import React from 'react'
+// import { useEffect, useState } from 'react'
+//  import axios from 'axios';
 import { Link } from 'react-router-dom';
  import Header from '../Components/Header';
 //  import Carousel  from 'react-responsive-carousel';
  import "react-responsive-carousel/lib/styles/carousel.min.css";
+//  import News from '../Components/News'
 import Footer from '../Components/Footer';
  
  
@@ -11,6 +14,17 @@ import Footer from '../Components/Footer';
  
  export default function Home() {
      const d = new Date();
+    //  const [ stories, setStories ] = useState([]);
+
+    //  useEffect(() => {
+    //        axios.get('https://backend-news-app-api.herokuapp.com/api/stories')
+    //        .then((res)  => {
+    //            console.log(res.data.data)
+    //            setStories(res.data.data)
+    //        }).catch((err) => {
+    //            console.log(err)
+    //        })
+    //  }, [])
       
      
      return (
@@ -18,7 +32,7 @@ import Footer from '../Components/Footer';
           <div>
               <Header />
                     <div className="label">
-                        <img  style={{width: "30px", height:"40px"}} src={process.env.PUBLIC_URL  + '/Calender.png'}  alt="..."/>
+                        <img  style={{width: "25px"}} src={process.env.PUBLIC_URL  + '/Calender.png'}  alt="..."/>
                         <p>{d.toLocaleTimeString()}</p>
                         <p>{d.toDateString()}</p>
                         <p className="breaking-news">Breaking News</p>
@@ -29,7 +43,8 @@ import Footer from '../Components/Footer';
                         {/* <i sclass="fas fa-search"></i> */}
                     
                     </div>
-                    <div>
+                    
+                    <div className="spacing">
                             <div id="carousel-div" class="carousel slide" data-bs-ride="carousel">
                                 <div class="carousel-indicators">
                                     <button type="button" data-bs-target="#carouselExampleIndicators" style={{height: "10px", borderRadius: "5px"}} data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -38,14 +53,15 @@ import Footer from '../Components/Footer';
                                 </div>
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
-                                    <img src={process.env.PUBLIC_URL  + '/Frontend.png'} class="d-block " alt="..."/>
+                                    <img src={process.env.PUBLIC_URL  + '/Frontend.png'} class="d-block w-100" alt="..."/>
                                     </div>
                                     <div class="carousel-item">
-                                    <img src={process.env.PUBLIC_URL  + '/Deploy.png'} class="d-block " alt="..."/>
+                                    <img src={process.env.PUBLIC_URL  + '/Deploy.png'} class="d-block w-100" alt="..."/>
                                     </div>
                                     <div class="carousel-item">
-                                    <img src={process.env.PUBLIC_URL  + '/After.png'} class="d-block " alt="..."/>
+                                    <img src={process.env.PUBLIC_URL  + '/After.png'} class="d-block w-100" alt="..."/>
                                     </div>
+                                    <div className="spacing">
                                     <div className="carousel-caption">
                                         <p className="carousel-p">Craig Bator - 27 June 2021</p>
                                         <h6 className="carousel-h">After all is said and done, more is done.</h6>
@@ -61,21 +77,24 @@ import Footer from '../Components/Footer';
                             </button>
                             </div>
                             </div>
+                            </div>
 
 
 
 
                 
                  </div>
+                 <div className="spacing">
                 <div className="home-paragraph">
-                        <p>Politics</p>
+                {/* <Link to='./politics' className="nav-buttons">Politics</Link> */}
+                      <Link to='./politics'>  <p className="home-links">Politics</p></Link>
                         <strong><hr></hr></strong>
                     </div>
                     <div>
-                    <img src={process.env.PUBLIC_URL  + '/Governor.png'} class="d-block w-100" alt="..."/>
+                   <Link to='./politics'>  <img src={process.env.PUBLIC_URL  + '/Governor.png'} class="d-block w-100" alt="..."/></Link>
                     <p className="img-paragraph">Governor Okowa came to power on May 29th 2015 with a <br/> development template codified as smart agenda.</p>
                 </div>
-
+                
                 <section className="under-img">
                         <div className="card-img">
                         <div class="card mb-3" style={{width: '400px'}}>
@@ -123,16 +142,17 @@ import Footer from '../Components/Footer';
             </div>
             </div>        
                 </div>
-           
-            
-            
+                
            </section>
+           </div>
+           
+           <div className="spacing">
            <div className="home-paragraph">
-               <p>Business</p>
+               <Link to='./business'> <p className="home-links">Business</p> </Link>
                <strong><hr></hr></strong>
            </div>
            <div>
-           <img src={process.env.PUBLIC_URL  + '/Abuja.png'} class="d-block w-100" alt="..."/> 
+           <Link to='./business'> <img src={process.env.PUBLIC_URL  + '/Abuja.png'} class="d-block w-100" alt="..."/> </Link>
            <p className="img-paragraph">Abuja banks comply with CBN forex directive, <br/>sell Dollar at N412</p>
            </div>
            <section className="under-img">
@@ -182,11 +202,14 @@ import Footer from '../Components/Footer';
             </div>
             </div>        
                 </div>
+               
            
     </section>
+    </div>
 
+            <div className="spacing">
             <div className="home-paragraph">
-               <p>Science & Tech</p> 
+               <Link to='./science'><p className="home-links">Science & Tech</p> </Link>
                <strong><hr></hr></strong>
             </div>
             <div>
@@ -242,8 +265,11 @@ import Footer from '../Components/Footer';
                 </div>
            
             </section>
+            </div>
+
+            <div className="spacing">
             <div className="home-paragraph">
-               <p>Sports</p> 
+              <Link to='./sports'> <p className="home-links">Sports</p> </Link>
                <strong><hr></hr></strong>
             </div>
             <div>
@@ -266,7 +292,7 @@ import Footer from '../Components/Footer';
             </div>
             </div>
                 </div>
-
+                
                 <div className="card-img">
                 <div class="card mb-3" style={{width: '400px'}}>
             <div class="row g-0 row--container">
@@ -299,16 +325,16 @@ import Footer from '../Components/Footer';
                 </div>
            
             </section>
+            </div>
             
             
-            
-           
+           <div className="spacing">
            <div className="home-paragraph">
-               <p>Entertainment</p> 
+               <Link to='./entertainment'> <p className="home-links">Entertainment</p> </Link>
                <strong><hr></hr></strong>
             </div>
             <div>
-            <img src={process.env.PUBLIC_URL  + '/Amanda1.png'} class="d-block w-100" alt="..."/>
+            <Link to='./entertainment'><img src={process.env.PUBLIC_URL  + '/Amanda1.png'} class="d-block w-100" alt="..."/></Link>
             <p className="img-paragraph-two">Amanda seyfried became "really obsessed" with ghost stories: <br/> Hollywood Actress Amanada Seyfried has recalled the time <br/> when she became obsessed with ghost stories.</p>
             </div>
             <section className="under-img">
@@ -358,10 +384,10 @@ import Footer from '../Components/Footer';
             </div>
             </div>        
                 </div>
-           
-            
-            
-           </section>
+
+          </section>
+          </div>
+
            <Footer />
          </main>
      )

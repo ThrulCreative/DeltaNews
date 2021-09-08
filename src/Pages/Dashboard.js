@@ -71,7 +71,7 @@ export default function Dashboard() {
 
 
                     <section className='admin-dash-logo'>
-                        <img className="dash-img" style={{ width: "180px", marginLeft: "30px" }} src={process.env.PUBLIC_URL + '/Logo_Black 2.svg'} alt="..." />
+                       <Link to='./'> <img className="dash-img" style={{ width: "180px", marginLeft: "30px" }} src={process.env.PUBLIC_URL + '/Logo_Black 2.svg'} alt="..." /></Link>
                     </section>
                     <section className="admin-dash-right-panel">
                         <div className="dash-blue">
@@ -144,16 +144,16 @@ export default function Dashboard() {
                     </div>
                     <div className="dash-upload">
                         <div className="upload-div">
-                            <p style={{ opacity: "35%" }} for="Uplaod Image*">Upload Image*</p>
-                            <input onChange={hanleImage} className="upload" style={{ opacity: "35%" }} type="file" name="Upload" />
+                            <p style={{ opacity: "50%" }} for="Uplaod Image*">Upload Image*</p>
+                            <input onChange={hanleImage} className="upload" style={{ opacity: "50%" }} type="file" name="Upload" />
 
                         </div>
                         <div className="upload-div">
-                            <p style={{ opacity: "35%" }} >Caption</p>
-                            <input value={caption} className="dash-para" type="text" style={{ opacity: "35%" }} onChange={e => setCaption(e.target.value)} name='caption' />
+                            <p style={{ opacity: "50%" }} >Caption</p>
+                            <input value={caption} className="dash-para" type="text" style={{ opacity: "50%" }} onChange={e => setCaption(e.target.value)} name='caption' />
                         </div>
                         <div className="upload-div">
-                            <p style={{ opacity: "35%" }} >Writer</p>
+                            <p style={{ opacity: "50%" }} >Writer</p>
                             <input value={writer} onChange={e => setWriter(e.target.value)} style={{ opacity: "45%",  marginLeft: '42px' }} className="dash-para" type="text"/>
                         </div>
                     </div>
